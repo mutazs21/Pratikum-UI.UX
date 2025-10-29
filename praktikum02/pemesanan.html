@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Barang</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!-- Form Page -->
+    <div id="formPage">
+
+        <nav>
+            <a href="#home">Home</a> |
+            <a href="#generate">Generate Link</a> |
+            <a href="#history">Transaction History</a> |
+            <a href="#policy">Policy</a> |
+            <a href="#logout">Logout</a>
+        </nav>
+        <div class="header">
+            <h1 class="h1-form">Products Order Form</h1>
+            <p>Please fill out the form below to place an order.</p>
+            <p>Make sure all the information you entered is correct before submitting the form.</p>
+            <hr>
+        </div>
+        <div class="container">
+            <form id="orderForm" class="form-layout">
+                <div class="image-section">
+                    <div class="image-placeholder" id="imagePreview">Upload Image</div>
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                    <button type="button" class="upload-btn"
+                        onclick="document.getElementById('imageUpload').click()">Upload Image</button>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>Title Here :</label>
+                        <input type="text" id="titleHere" placeholder="Item Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description :</label>
+                        <div class="description-fields">
+                            <input type="text" id="year" placeholder="Year">
+                            <input type="text" id="model" placeholder="Model">
+                            <input type="text" id="condition" placeholder="Condition">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Account Number :</label>
+                        <input type="text" id="accountNumber" placeholder="+62 895-1234-5678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bank :</label>
+                        <select id="bank" required>
+                            <option value="">Select Bank</option>
+                            <option value="HSBC">HSBC</option>
+                            <option value="BCA">BCA</option>
+                            <option value="Mandiri">Mandiri</option>
+                            <option value="BNI">BNI</option>
+                            <option value="BRI">BRI</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Account Holder :</label>
+                        <input type="text" id="accountHolder" placeholder="Name Here" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Transaction :</label>
+                        <div class="transaction-section">
+                            <select id="transaction" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="transaction-note">* if the transaction is for 5 person, choose 3 from the drop-down
+                            list</div>
+
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" id="sendMobile">
+                                Send to Mobile Phone
+                            </label>
+                            <label>
+                                <input type="checkbox" id="sendEmail">
+                                Send to Email
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Send to Mobile Phone :</label>
+                        <input type="text" id="mobileNumbers" placeholder="1234567890, 1234567891">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Send to Email :</label>
+                        <input type="email" id="emailAddresses" placeholder="infrmz2g13@soton.ac.uk, fys_06@yahoo.com">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Generate Notar Link</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Result Page -->
+    <div id="resultPage" class="result-page">
+
+        <nav>
+            <a href="#home">Home</a> |
+            <a href="#register">Register</a> |
+            <a href="#policy">Policy</a> |
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="container">
+            <div class="result-layout">
+                <div class="image-section">
+                    <div class="image-placeholder">
+                        <img id="resultImage" alt="Product Image">
+                    </div>
+                </div>
+
+                <div class="result-info">
+                    <div class="info-row">
+                        <div class="info-label">Title Here :</div>
+                        <div class="info-value" id="resultTitle"></div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Description :</div>
+                        <div class="info-value" id="resultDescription"></div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Total Amount :</div>
+                        <div class="info-value" id="resultAmount"></div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Pay to :</div>
+                        <div class="info-value" id="resultPayTo"></div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Payment Type :</div>
+                        <div class="info-value" id="resultPaymentType">Visa Debit</div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Account Holder :</div>
+                        <div class="info-value" id="resultAccountHolder"></div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Account No :</div>
+                        <div class="info-value" id="resultAccountNo"></div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="resultSendMobile" disabled>
+                            Send to Mobile Phone
+                        </label>
+                        <label>
+                            <input type="checkbox" id="resultSendEmail" disabled>
+                            Email me copy of transaction
+                        </label>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Send to Mobile Phone :</div>
+                        <div class="info-value" id="resultMobile"></div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Send to Email :</div>
+                        <div class="info-value" id="resultEmail"></div>
+                    </div>
+
+                    <button class="submit-btn" onclick="makePayment()">Pay using QuadLink</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let uploadedImage = null;
+
+        document.getElementById('imageUpload').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    uploadedImage = event.target.result;
+                    const preview = document.getElementById('imagePreview');
+                    preview.innerHTML = `<img src="${event.target.result}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('orderForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const titleHere = document.getElementById('titleHere').value;
+            const year = document.getElementById('year').value;
+            const model = document.getElementById('model').value;
+            const condition = document.getElementById('condition').value;
+            const accountNumber = document.getElementById('accountNumber').value;
+            const bank = document.getElementById('bank').value;
+            const accountHolder = document.getElementById('accountHolder').value;
+            const transaction = document.getElementById('transaction').value;
+            const sendMobile = document.getElementById('sendMobile').checked;
+            const sendEmail = document.getElementById('sendEmail').checked;
+            const mobileNumbers = document.getElementById('mobileNumbers').value;
+            const emailAddresses = document.getElementById('emailAddresses').value;
+
+            const description = [year, model, condition].filter(Boolean).join('\n');
+
+            document.getElementById('resultTitle').textContent = titleHere;
+            document.getElementById('resultDescription').innerHTML = description.replace(/\n/g, '<br>');
+            document.getElementById('resultAmount').textContent = 'Rp.1,500,000'; // Static amount for demo
+            document.getElementById('resultPayTo').textContent = accountNumber;
+            document.getElementById('resultAccountHolder').textContent = accountHolder;
+            document.getElementById('resultAccountNo').textContent = accountNumber;
+            document.getElementById('resultMobile').textContent = mobileNumbers;
+            document.getElementById('resultEmail').textContent = emailAddresses;
+            document.getElementById('resultSendMobile').checked = sendMobile;
+            document.getElementById('resultSendEmail').checked = sendEmail;
+
+            if (uploadedImage) {
+                document.getElementById('resultImage').src = uploadedImage;
+                document.getElementById('resultImage').style.display = 'block';
+            }
+
+            document.getElementById('formPage').style.display = 'none';
+            document.getElementById('resultPage').classList.add('active');
+        });
+
+        function makePayment() {
+            alert('Proses pembayaran akan dilakukan menggunakan QuadLink');
+        }
+    </script>
+</body>
+
+</html>

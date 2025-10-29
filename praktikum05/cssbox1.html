@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS BOX 1</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+        /* Kotak */
+        .kotak {
+            border: 3px solid #000;
+            width: 200px;
+            height: 550px;
+            border-radius: 15px;
+        }
+
+        .item1 {
+            background-color: blue;
+        }
+        
+        .item2 {
+            background-color: green;
+        }
+
+        .item3 {
+            background-color: red;
+        }
+
+        .item4 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="kotak item1">1</div>
+        <div class="kotak item2">2</div>
+        <div class="kotak item3">3</div>
+        <div class="kotak item4">4</div>
+    </div>
+</body>
+
+</html>
