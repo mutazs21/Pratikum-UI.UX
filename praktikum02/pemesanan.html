@@ -6,7 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Pemesanan Barang</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            /* Jarak dari bawah */
+            left: 20px;
+            /* Jarak dari kiri */
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 18px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
 
+        .back-button:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 
 <body>
@@ -251,6 +274,18 @@
 
         function makePayment() {
             alert('Proses pembayaran akan dilakukan menggunakan QuadLink');
+        }
+    </script>
+
+    <button class="back-button" onclick="goBack()">⬅️ Kembali</button>
+
+    <script>
+        function goBack() {
+            // Kalau mau balik ke halaman sebelumnya:
+            window.history.back();
+
+            // ATAU kalau mau balik ke halaman utama tertentu (misal index.html):
+            // window.location.href = "index.html";
         }
     </script>
 </body>

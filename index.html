@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio UI/UX - Tugas Praktikum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <div class="container mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="assets/img/mutazs.jpg" alt="Mumtaaz Abdurrahman"
+                        class="w-14 h-14 rounded-full object-cover border-2 border-primary-500">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">Portfolio UI/UX</h1>
+                        <p class="text-sm text-gray-500">Kumpulan Tugas Praktikum</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-purple-600 transition">Home</a>
+                    <a href="#projects" class="text-gray-600 hover:text-purple-600 transition">Projects</a>
+                    <a href="#about" class="text-gray-600 hover:text-purple-600 transition">About</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-5xl font-bold text-gray-800 mb-4">Selamat Datang</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Eksplorasi koleksi tugas Praktikum UI/UX. Setiap project
+                menampilkan pembelajaran dan kreativitas dalam desain antarmuka pengguna.</p>
+        </div>
+
+        <!-- Biodata Section -->
+        <div class="max-w-3xl mx-auto mb-16">
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div
+                        class="w-32 h-32 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                        <img src="assets/img/mutazs.jpg" alt="Mumtaaz Abdurrahman"
+                            class="w-32 h-32 rounded-full object-cover border-2 border-primary-500">
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Tentang Saya</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-center md:justify-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <p class="text-gray-700"><span class="font-semibold">Nama:</span> Mumtaaz Abdurrahman
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-center md:justify-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z">
+                                    </path>
+                                </svg>
+                                <p class="text-gray-700"><span class="font-semibold">NIM:</span> 0110225164</p>
+                            </div>
+                            <div class="flex items-center justify-center md:justify-start">
+                                <svg class="w-5 h-5 text-pink-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                                    </path>
+                                </svg>
+                                <p class="text-gray-700"><span class="font-semibold">Jurusan:</span> Teknik Informatika
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-center md:justify-start">
+                                <svg class="w-5 h-5 text-indigo-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z">
+                                    </path>
+                                </svg>
+                                <p class="text-gray-700"><span class="font-semibold">Rombel:</span> 09</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center card-hover">
+                <div class="text-4xl font-bold text-purple-600 mb-2">6/∞</div>
+                <div class="text-gray-600">Total Praktikum</div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center card-hover">
+                <div class="text-4xl font-bold text-blue-600 mb-2">100%</div>
+                <div class="text-gray-600">Completion Rate</div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center card-hover">
+                <div class="text-4xl font-bold text-pink-600 mb-2">∞</div>
+                <div class="text-gray-600">Creativity Level</div>
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projects" class="mb-16">
+            <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Tugas Pertemuan</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Project Cards -->
+                <a href="praktikum01/cv_0110225164_nama.html"
+                    class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 1</h4>
+                    <p class="text-gray-600 text-sm">Membuat CV tentang diri sendiri</p>
+                    <div class="mt-4 flex items-center text-purple-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="praktikum02/pemesanan.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">2</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 2</h4>
+                    <p class="text-gray-600 text-sm">Design Thinking Process</p>
+                    <div class="mt-4 flex items-center text-blue-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="praktikum-3.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">3</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 3</h4>
+                    <p class="text-gray-600 text-sm">User Research Methods</p>
+                    <div class="mt-4 flex items-center text-pink-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-4.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">4</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 4</h4>
+                    <p class="text-gray-600 text-sm">Wireframing Basics</p>
+                    <div class="mt-4 flex items-center text-indigo-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-5.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">5</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 5</h4>
+                    <p class="text-gray-600 text-sm">Prototyping Tools</p>
+                    <div class="mt-4 flex items-center text-green-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-6.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">6</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 6</h4>
+                    <p class="text-gray-600 text-sm">Color Theory</p>
+                    <div class="mt-4 flex items-center text-yellow-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-7.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">7</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 7</h4>
+                    <p class="text-gray-600 text-sm">Typography Design</p>
+                    <div class="mt-4 flex items-center text-red-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-8.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">8</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 8</h4>
+                    <p class="text-gray-600 text-sm">UTS - Mid Semester</p>
+                    <div class="mt-4 flex items-center text-teal-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-9.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">9</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 9</h4>
+                    <p class="text-gray-600 text-sm">Interaction Design</p>
+                    <div class="mt-4 flex items-center text-orange-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-10.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">10</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 10</h4>
+                    <p class="text-gray-600 text-sm">Usability Testing</p>
+                    <div class="mt-4 flex items-center text-cyan-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-11.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-fuchsia-500 to-fuchsia-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">11</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 11</h4>
+                    <p class="text-gray-600 text-sm">Mobile Design Patterns</p>
+                    <div class="mt-4 flex items-center text-fuchsia-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-12.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-lime-500 to-lime-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">12</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 12</h4>
+                    <p class="text-gray-600 text-sm">Responsive Design</p>
+                    <div class="mt-4 flex items-center text-lime-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-13.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">13</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 13</h4>
+                    <p class="text-gray-600 text-sm">Accessibility Standards</p>
+                    <div class="mt-4 flex items-center text-violet-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-14.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-rose-500 to-rose-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">14</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 14</h4>
+                    <p class="text-gray-600 text-sm">Design Systems</p>
+                    <div class="mt-4 flex items-center text-rose-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-15.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">15</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 15</h4>
+                    <p class="text-gray-600 text-sm">Portfolio Preparation</p>
+                    <div class="mt-4 flex items-center text-emerald-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href=" Praktikum-16.html" class="block bg-white rounded-2xl p-6 shadow-lg card-hover group">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <span class="text-2xl font-bold text-white">16</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2"> Praktikum 16</h4>
+                    <p class="text-gray-600 text-sm">UAS - Final Project</p>
+                    <div class="mt-4 flex items-center text-sky-600 group-hover:translate-x-2 transition">
+                        <span class="text-sm font-medium">Lihat Project</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">© 2024 Portfolio UI/UX. Dibuat dengan ❤️ dan Tailwind CSS</p>
+        </div>
+    </footer>
+</body>
+
+</html>

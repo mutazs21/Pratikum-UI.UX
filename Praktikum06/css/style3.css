@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+}
+.container {
+    text-align: center;
+    font-size: 50px;
+    display: flex;
+}
+
+.navbar {
+    background-color: pink;
+    width: 20%;
+    height: 100vh;
+    line-height: 100vh;
+}
+
+.content {
+    width: 80%;
+}
+
+.header {
+    background-color: yellow;
+    height: 20vh;
+    line-height: 20vh;
+}
+.main {
+    height: 60vh;
+    display: flex;
+}
+.article {
+    background-color: white;
+    width: 75%;
+    height: 60vh;
+    line-height: 60vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.aside {
+    background-color: aqua;
+    width: 25%;
+    height: 60vh;
+    line-height: 60vh;
+}
+
+.footer {
+    background-color: yellow;
+    height: 20vh;
+    line-height: 20vh;
+}
