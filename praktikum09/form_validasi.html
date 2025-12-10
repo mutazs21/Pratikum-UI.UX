@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Tiket</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #9b9b9b 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        input.error {
+            border-color: #e74c3c;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #000000 0%, #000000 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+        }
+
+        .result-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .result-container.show {
+            display: block;
+        }
+
+        .result-container h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .result-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Form Pemesanan Tiket</h2>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="name">Nama Pelanggan:</label>
+                <input type="text" id="name" placeholder="Masukkan Nama Anda (Max 30 karakter)">
+                <span class="error-message" id="errorName"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="Masukkan Email Anda">
+                <span class="error-message" id="errorEmail"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="jam">Jam Keberangkatan:</label>
+                <input type="time" id="jam" placeholder="Masukkan Jam Keberangkatan">
+                <span class="error-message" id="errorJam"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="tujuan">Tujuan Keberangkatan:</label>
+                <input type="text" id="tujuan" placeholder="Masukkan Tujuan Anda">
+                <span class="error-message" id="errorTujuan"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="tiket">Jumlah Tiket:</label>
+                <input type="number" id="tiket" placeholder="Masukkan Jumlah Tiket (1-10)">
+                <span class="error-message" id="errorTiket"></span>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="formValidation()">Submit</button>
+        </form>
+
+        <div class="result-container" id="resultContainer">
+            <h3>Data Pemesanan Valid</h3>
+            <div class="result-item">
+                <span class="result-label">Nama Pelanggan:</span>
+                <span id="hasilName"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Email:</span>
+                <span id="hasilEmail"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Jam Keberangkatan:</span>
+                <span id="hasilJam"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Tujuan Keberangkatan:</span>
+                <span id="hasilTujuan"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Jumlah Tiket:</span>
+                <span id="hasilTiket"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function formValidation() {
+            // Ambil nilai input
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let jam = document.getElementById("jam").value;
+            let tujuan = document.getElementById("tujuan").value.trim();
+            let tiket = document.getElementById("tiket").value;
+
+            // Reset semua error
+            clearErrors();
+
+            // Flag untuk cek apakah semua valid
+            let isValid = true;
+
+            // Validasi Nama (required, max 30 karakter)
+            if (name === "") {
+                showError("name", "errorName", "Nama pelanggan harus diisi");
+                isValid = false;
+            } else if (name.length > 30) {
+                showError("name", "errorName", "Nama maksimal 30 karakter");
+                isValid = false;
+            }
+
+            // Validasi Email (required, format email)
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                showError("email", "errorEmail", "Email harus diisi");
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                showError("email", "errorEmail", "Format email tidak valid");
+                isValid = false;
+            }
+
+            // Validasi Jam (required, format 00:00 - 23:59)
+            if (jam === "") {
+                showError("jam", "errorJam", "Jam keberangkatan harus diisi");
+                isValid = false;
+            } else {
+                const [hours, minutes] = jam.split(':').map(Number);
+                if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
+                    showError("jam", "errorJam", "Format jam tidak valid (00:00 - 23:59)");
+                    isValid = false;
+                }
+            }
+
+            // Validasi Tujuan (required)
+            if (tujuan === "") {
+                showError("tujuan", "errorTujuan", "Tujuan keberangkatan harus diisi");
+                isValid = false;
+            }
+
+            // Validasi Jumlah Tiket (required, bilangan bulat 1-10)
+            if (tiket === "") {
+                showError("tiket", "errorTiket", "Jumlah tiket harus diisi");
+                isValid = false;
+            } else {
+                const tiketNum = parseInt(tiket);
+                if (isNaN(tiketNum) || tiketNum < 1 || tiketNum > 10 || tiket.includes('.')) {
+                    showError("tiket", "errorTiket", "Jumlah tiket harus bilangan bulat antara 1-10");
+                    isValid = false;
+                }
+            }
+
+            // Jika semua valid, tampilkan hasil
+            if (isValid) {
+                displayResult(name, email, jam, tujuan, tiket);
+            } else {
+                hideResult();
+            }
+        }
+
+        function showError(inputId, errorId, message) {
+            const inputElement = document.getElementById(inputId);
+            const errorElement = document.getElementById(errorId);
+            
+            inputElement.classList.add("error");
+            errorElement.textContent = message;
+            errorElement.classList.add("show");
+        }
+
+        function clearErrors() {
+            const inputs = ["name", "email", "jam", "tujuan", "tiket"];
+            inputs.forEach(id => {
+                document.getElementById(id).classList.remove("error");
+                document.getElementById("error" + id.charAt(0).toUpperCase() + id.slice(1)).classList.remove("show");
+            });
+        }
+
+        function displayResult(name, email, jam, tujuan, tiket) {
+            document.getElementById("hasilName").textContent = name;
+            document.getElementById("hasilEmail").textContent = email;
+            document.getElementById("hasilJam").textContent = jam;
+            document.getElementById("hasilTujuan").textContent = tujuan;
+            document.getElementById("hasilTiket").textContent = tiket;
+            document.getElementById("resultContainer").classList.add("show");
+        }
+
+        function hideResult() {
+            document.getElementById("resultContainer").classList.remove("show");
+        }
+
+        // Reset error saat user mulai mengetik
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('error');
+                const errorId = 'error' + this.id.charAt(0).toUpperCase() + this.id.slice(1);
+                document.getElementById(errorId).classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
